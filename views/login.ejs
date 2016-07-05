@@ -1,0 +1,102 @@
+<link href="../css/all.css" rel="stylesheet" type="text/css">
+
+<form action="/oauth/token" method="post">
+	<table>
+		<tr>
+			<td>
+				<svg width="40" height="40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+					<ellipse cx="21" cy="17" rx="5.5" ry="5.98" fill="#990033" stroke="#990000" />
+					<ellipse cx="20" cy="16" rx="0" ry="0" fill="#993300" stroke="#990000" />
+					<ellipse cx="23" cy="15" rx="0" ry="0" fill="#993300" stroke="#990000" />
+					<ellipse cx="20" cy="16" rx="0" ry="0" fill="#0033FF" stroke="#990000" />
+					<rect x="14" y="21" width="14" height="11" fill="#663333" stroke="#990000" />
+				</svg>
+			</td>
+			<td>
+				<div class="form-group">
+					<input type="text" name="username"></input>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<svg width="40" height="40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+					<path d="M142.49,30.493C141.45,6.455,94.925,0.499,70.118,0.499 c-23.781,0-70.643,6.674-69.62,29.994c1.04,24.036,46.525,29.992,72.032,29.992C96.651,60.485,143.512,54.053,142.49,30.493z M79.768,55.718c-17.233,1.908-34.803-11.426-36.193-30.697c-1.022-14.042,4.825-18.09,19.31-19.756 c17.219-1.908,34.803,11.184,36.529,30.466C100.436,49.773,94.589,54.294,79.768,55.718z" transform="matrix(0.1830986,0,0,0.1833333,6.908451,11.90833)" fill="#FF0000" stroke="#990000" />
+					<rect x="5" y="19" width="30" height="12" fill="#996600" stroke="#990000" />
+				</svg>
+			</td>
+			<td>
+				<div class="form-group">
+					<input type="password" name="password"></input>
+				</div>
+			</td>
+		</tr>
+		<tr><td><input type="hidden" name="consumer_session" value=<%= consumer_token %>/></td></tr>
+		<tr>
+			<td><button class="btn btn-primary" type="submit">submit</button></td>
+			<td><button class="btn btn-primary" type="reset">reset</button></td>
+		</tr>
+	</table>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script type="text/javascript">
+$(function(){
+	// Returns width of browser viewport
+	$( window ).width();
+	// Returns width of HTML document
+	$( document ).width();
+	
+	$("body").css("padding-left",($(window).width() - $(".login-form").width())/2+"px");
+	$("body").css("padding-top",($(window).height() - $(".login-form").height())/2+"px");
+});
+</script>

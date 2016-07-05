@@ -1,0 +1,80 @@
+<link href="../css/all.css" rel="stylesheet" type="text/css">
+
+<form>
+	<table>
+		<tr>
+			<td>process</td>
+			<td>
+				<%= process %>
+			</td>
+		</tr>
+		<tr>
+			<td>error info: </td>
+			<td>
+				<%= error %>
+			</td>
+		</tr>
+	</table>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script type="text/javascript">
+$(function(){
+	// Returns width of browser viewport
+	$( window ).width();
+	// Returns width of HTML document
+	$( document ).width();
+	
+	$("body").css("padding-left",($(window).width() - $(".login-form").width())/2+"px");
+	$("body").css("padding-top",($(window).height() - $(".login-form").height())/2+"px");
+});
+</script>

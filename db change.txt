@@ -1,0 +1,13 @@
+ALTER TABLE oauthsession ALTER COLUMN expires varchar(100);
+
+ALTER TABLE oauthsession DROP COLUMN expires;
+
+ALTER TABLE oauthsession ADD COLUMN expires varchar(100);
+
+ALTER TABLE users DROP COLUMN createdate;
+
+ALTER TABLE users ADD COLUMN createdate varchar(100);
+
+ALTER TABLE users DROP COLUMN updatedate;
+
+ALTER TABLE users ADD COLUMN updatedate varchar(100);

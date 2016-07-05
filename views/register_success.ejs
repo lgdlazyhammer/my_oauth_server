@@ -1,0 +1,110 @@
+<link href="../css/all.css" rel="stylesheet" type="text/css">
+
+<form>
+	<table>
+		<tr>
+			<td>name</td>
+			<td>
+				<%= name %>
+			</td>
+		</tr>
+		<tr>
+			<td>password</td>
+			<td>
+				<%= password %>
+			</td>
+		</tr>
+		<tr>
+			<td>gender</td>
+			<td>
+				<%= gender %>
+			</td>
+		</tr>
+		<tr>
+			<td>phone number</td>
+			<td>
+				<%= phoneNumber %>
+			</td>
+		</tr>
+		<tr>
+			<td>email address</td>
+			<td>
+				<%= email %>
+			</td>
+		</tr>
+		<tr>
+			<td>create date</td>
+			<td>
+				<%= createDate %>
+			</td>
+		</tr>
+		<tr>
+			<td>update date</td>
+			<td>
+				<%= updateDate %>
+			</td>
+		</tr>
+	</table>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script type="text/javascript">
+$(function(){
+	// Returns width of browser viewport
+	$( window ).width();
+	// Returns width of HTML document
+	$( document ).width();
+	
+	$("body").css("padding-left",($(window).width() - $(".login-form").width())/2+"px");
+	$("body").css("padding-top",($(window).height() - $(".login-form").height())/2+"px");
+});
+</script>

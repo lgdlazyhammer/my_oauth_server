@@ -1,0 +1,119 @@
+<link href="css/all.css" rel="stylesheet" type="text/css">
+
+<form action="/oauth/register" method="post">
+	<table>
+		<tr>
+			<td>name</td>
+			<td>
+				<div class="register_input">
+					<input type="text" name="name"></input>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>password</td>
+			<td>
+				<div class="register_input">
+					<input type="password" name="password"></input>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>gender</td>
+			<td>
+				<div class="float-left">
+				  <input type="radio" id="radio01" name="gender" value="male" checked="true"/>
+				  <label for="radio01"><span></span>male</label>
+				</div>
+
+				<div class="float-left">
+				 <input type="radio" id="radio02" name="gender" value="female"/>
+				 <label for="radio02"><span></span>female</label>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>phone number</td>
+			<td>
+				<div class="register_input">
+					<input type="text" name="phonenumber"></input>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>email address</td>
+			<td>
+				<div class="register_input">
+					<input type="email" name="email"></input>
+				</div>
+			</td>
+		</tr>
+		<tr></tr>
+		<tr>
+			<td><button class="btn register-submit" type="submit">submit</button></td>
+			<td><button class="btn register-reset" type="reset">reset</button></td>
+		</tr>
+	</table>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script type="text/javascript">
+$(function(){
+	// Returns width of browser viewport
+	$( window ).width();
+	// Returns width of HTML document
+	$( document ).width();
+	
+	$("body").css("padding-left",($(window).width() - $(".login-form").width())/2+"px");
+	$("body").css("padding-top",($(window).height() - $(".login-form").height())/2+"px");
+});
+</script>
