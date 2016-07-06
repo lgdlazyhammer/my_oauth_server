@@ -7,7 +7,7 @@ if(process.env.DATABASE_URL != null && process.env.DATABASE_URL != ""){
 }else{
 	conString = "postgres://"+defaults.user+":"+defaults.password+"@"+defaults.host+"/"+defaults.database;
 }
-//pg open ssl
+//pg open ssl which is must be done for heroku
 pg.defaults.ssl = true;
 //this initializes a connection pool
 //it will keep idle connections open for a (configurable) 30 seconds
