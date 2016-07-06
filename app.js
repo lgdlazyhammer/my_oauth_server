@@ -1,4 +1,15 @@
 require('./initdb.js').initdb();
+
+var log4js = require('log4js');
+log4js.configure({
+  appenders: [
+    { type: 'console' },
+    { type: 'file', filename: __dirname+'/logs/cheese.log', category: 'cheese' }
+  ]
+});
+var logger = log4js.getLogger('cheese');
+logger.setLevel('INFO');
+
 // set variables for environment
 var express = require('express');
 var app = express();
@@ -61,11 +72,11 @@ app.use('/oauth/register', function(req, res) {
 	
 	var registerUser = new OAuthUser(name,password,gender,phoneNumber,email,createDate,updateDate);
 	userService.save(registerUser,function(result){
-		
+		logger.info('user register success. user ' + name);
 		var locals = { name : name, password : password, gender : gender, phoneNumber : phoneNumber, email : email, createDate : createDate, updateDate : updateDate };
 		res.render('register_success',locals);
 	},function(error){
-		
+		logger.error('user register failed! ' + error);
 		var locals = { error : error, process : 'register user information' };
 		res.render('error',locals);
 	});
@@ -92,11 +103,14 @@ app.use('/oauth/login', function(req, res) {
         var locals = { consumer_token : req.query.consumer_token };
         
         if(result.rows != null && result.rows != undefined){
+			logger.info('consumer authorize success redirect to login page.');
             res.render('login',locals);
         }else{
+			logger.info('consumer authorize failed can not find consumer in session.');
             res.send(403, "unauthorized");
         }
     },function(error){
+		logger.error('user login failed! ' + error);
 		var locals = { error : error, process : 'get consumer session to login'  };
 		res.render('error',locals);
 	});
@@ -132,8 +146,10 @@ app.use('/oauth/authorize', function(req, res) {
                     // 数据以json形式返回
                     var temp = { consumer_token: session_id };
                     console.log("send response:  "+JSON.stringify(temp));
+					logger.info('consumer authorize success save information in session.');
                     res.status(200).send(JSON.stringify(temp));
             },function(error){
+				logger.error('save consumer session failed! ' + error);
 				var temp = { error: error, process:'save consumer session' };
                 res.status(500).send(JSON.stringify(temp));
 			});
@@ -167,8 +183,10 @@ app.use('/oauth/authorize', function(req, res) {
                     // 数据以json形式返回
                     var temp = { consumer_token: session_id };
                     console.log("send response:  "+JSON.stringify(temp));
+					logger.info('consumer authorize success save information in session.');
                     res.status(200).send(JSON.stringify(temp));
             },function(error){
+				logger.error('save consumer session failed! ' + error);
 				var temp = { error: error, process:'save consumer session' };
                 res.status(500).send(JSON.stringify(temp));
 			});
@@ -208,13 +226,15 @@ app.use('/oauth/token', function(req, res) {
 		
 		var oauthSession = new OAuthSession(session_id,JSON.stringify({ user: req.body.username , consumer:consumerKey }),Math.floor(Date.now() / 1000));
 		sessionService.save(oauthSession,function(save_results){
-		
+			logger.info('resource token succesfully generated redirect to consumer server.');
 			res.redirect(301, redirect_url + '?resource_token='+session_id);	
 		},function(error){
+			logger.error('save resource token session failed! ' + error);
 			var locals = { error : error, process:'save resource token' };
 			res.render('error',locals);
 		});
 	},function(error){
+			logger.error('get consumer session to save resource session failed! ' + error);
 			var locals = { error : error, process:'get consumer session to save resource session' };
 			res.render('error',locals);
 	});

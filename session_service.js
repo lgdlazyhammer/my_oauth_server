@@ -1,3 +1,13 @@
+var log4js = require('log4js');
+log4js.configure({
+  appenders: [
+    { type: 'console' },
+    { type: 'file', filename: __dirname+'/logs/cheese.log', category: 'cheese' }
+  ]
+});
+var logger = log4js.getLogger('cheese');
+logger.setLevel('INFO');
+
 var db = require('./dbservice.js');
 
 module.exports.getOAuthSession = function(ID, CALLBACK, CALLBACKERROR){	
@@ -7,7 +17,8 @@ module.exports.getOAuthSession = function(ID, CALLBACK, CALLBACKERROR){
 	value.push(ID);
 	
 	db.select(selectSQLString, value, CALLBACK, function(error){
-		CALLBACKERROR();
+		logger.error('select session info failed!' + error);
+		CALLBACKERROR(error);
 	});
 }
 
@@ -21,7 +32,8 @@ module.exports.save = function(OAuthSession, CALLBACK, CALLBACKERROR){
 	value.push(OAuthSession.getExpires());
 	
 	db.save(insertSQLString, value, CALLBACK, function(error){
-		CALLBACKERROR();
+		logger.error('save session info failed!' + error);
+		CALLBACKERROR(error);
 	});
 }
 
