@@ -18,7 +18,8 @@ var querystring = require('querystring');
 var bodyParser = require("body-parser");
 //get the request ip address
 var requestIp = require('request-ip');
-
+//set port for heroku
+app.set('port', (process.env.PORT || 4000));
 //Here we are configuring express to use body-parser as middle-ware.
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -28,8 +29,9 @@ app.set('view engine', 'ejs'); // use either jade or ejs
 // instruct express to server up static assets
 app.use(express.static(__dirname));
 // Set server port
-app.listen(4000);
-console.log('server is running');
+app.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
+});
 
 var sessionService = require('./session_service');
 var OAuthSession = require('./session_property');
