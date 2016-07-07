@@ -39,9 +39,12 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs'); // use either jade or ejs       
 // instruct express to server up static assets
 app.use(express.static(__dirname));
+
+var fs = require("fs");
 // Set server port
 app.listen(app.get('port'), function() {
-  console.log('Node app is running on port', app.get('port'));
+    logger.info('Node app is running on port ' + app.get('port'));
+    console.log('Node app is running on port', app.get('port'));
 });
 
 var sessionService = require('./session_service');
@@ -54,6 +57,28 @@ var userService = require('./user_service');
 app.use('/register', function(req, res) {
 	
     res.render('register');
+});
+
+// set routes
+app.use('/logs', function(req, res) {
+	
+	fs.readdir(__dirname+"/logs/",function(err, files){
+		if (err) {
+			logger.error('read logs failed! ' + err);
+		   return console.error(err);
+		}
+		
+		var locals = [];
+		files.forEach( function (file){
+		   console.log( file );
+		   var temp = { name:'' };
+		   temp.name = file;
+		   locals.push(temp);
+		});
+		
+		var params = { paramFiles: locals };
+		res.render('logs',params);
+	});
 });
 
 // set routes

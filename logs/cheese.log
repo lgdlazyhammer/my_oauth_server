@@ -1,1 +1,19 @@
 [2016-07-06 12:23:00.530] [ERROR] cheese - initialize connect database failed!
+[2016-07-08 01:05:58.332] [INFO] cheese - Node app is running on port 4000
+[2016-07-08 01:05:58.463] [ERROR] cheese - initialize connect database failed!
+[2016-07-08 01:07:19.292] [INFO] cheese - Node app is running on port 4000
+[2016-07-08 01:07:19.468] [INFO] cheese - initialize create schema success.
+[2016-07-08 01:07:19.494] [INFO] cheese - initialize set default schema success.
+[2016-07-08 01:07:19.498] [INFO] cheese - initialize create users table success.
+[2016-07-08 01:07:19.500] [INFO] cheese - initialize create table oauthsession success.
+[2016-07-08 01:07:38.487] [ERROR] cheese - read logs failed! Error: ENOENT: no such file or directory, scandir 'H:\logs'
+[2016-07-08 01:08:51.539] [INFO] cheese - Node app is running on port 4000
+[2016-07-08 01:08:51.631] [INFO] cheese - initialize create schema success.
+[2016-07-08 01:08:51.652] [INFO] cheese - initialize set default schema success.
+[2016-07-08 01:08:51.654] [INFO] cheese - initialize create users table success.
+[2016-07-08 01:08:51.657] [INFO] cheese - initialize create table oauthsession success.
+[2016-07-08 01:10:02.947] [INFO] cheese - Node app is running on port 4000
+[2016-07-08 01:10:02.989] [INFO] cheese - initialize create schema success.
+[2016-07-08 01:10:03.002] [INFO] cheese - initialize set default schema success.
+[2016-07-08 01:10:03.005] [INFO] cheese - initialize create users table success.
+[2016-07-08 01:10:03.007] [INFO] cheese - initialize create table oauthsession success.
