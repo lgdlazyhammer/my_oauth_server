@@ -29,6 +29,12 @@ var querystring = require('querystring');
 var bodyParser = require("body-parser");
 //get the request ip address
 var requestIp = require('request-ip');
+//get server ip
+var serverIp = require('ip');
+//os is native for nodejs
+var os = require( 'os' );
+var networkInterfaces = os.networkInterfaces( );
+
 //set port for heroku
 app.set('port', (process.env.PORT || 4000));
 //Here we are configuring express to use body-parser as middle-ware.
@@ -43,6 +49,10 @@ app.use(express.static(__dirname));
 var fs = require("fs");
 // Set server port
 app.listen(app.get('port'), function() {
+	
+	console.log( networkInterfaces );
+	logger.info('Node app is running on ip ' + JSON.stringify(networkInterfaces));
+	logger.info('Node app is running on ip ' + serverIp.address());
     logger.info('Node app is running on port ' + app.get('port'));
     console.log('Node app is running on port', app.get('port'));
 });

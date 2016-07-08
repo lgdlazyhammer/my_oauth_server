@@ -17,3 +17,11 @@
 [2016-07-08 01:10:03.002] [INFO] cheese - initialize set default schema success.
 [2016-07-08 01:10:03.005] [INFO] cheese - initialize create users table success.
 [2016-07-08 01:10:03.007] [INFO] cheese - initialize create table oauthsession success.
+[2016-07-08 10:27:52.597] [INFO] cheese - Node app is running on ip [object Object]
+[2016-07-08 10:27:52.614] [INFO] cheese - Node app is running on ip 10.101.142.231
+[2016-07-08 10:27:52.618] [INFO] cheese - Node app is running on port 4000
+[2016-07-08 10:27:53.628] [ERROR] cheese - initialize connect database failed! Error: connect ECONNREFUSED 127.0.0.1:5432
+[2016-07-08 10:28:51.560] [INFO] cheese - Node app is running on ip {"本地连接":[{"address":"fe80::7584:2ef0:5670:456","netmask":"ffff:ffff:ffff:ffff::","family":"IPv6","mac":"34:64:a9:1e:51:2d","scopeid":11,"internal":false},{"address":"10.101.142.231","netmask":"255.255.252.0","family":"IPv4","mac":"34:64:a9:1e:51:2d","internal":false}],"Loopback Pseudo-Interface 1":[{"address":"::1","netmask":"ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff","family":"IPv6","mac":"00:00:00:00:00:00","scopeid":0,"internal":true},{"address":"127.0.0.1","netmask":"255.0.0.0","family":"IPv4","mac":"00:00:00:00:00:00","internal":true}]}
+[2016-07-08 10:28:51.581] [INFO] cheese - Node app is running on ip 10.101.142.231
+[2016-07-08 10:28:51.584] [INFO] cheese - Node app is running on port 4000
+[2016-07-08 10:28:52.591] [ERROR] cheese - initialize connect database failed! Error: connect ECONNREFUSED 127.0.0.1:5432
